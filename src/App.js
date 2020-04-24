@@ -14,10 +14,10 @@ function App() {
 
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ml-auto">
-              <li className="nav-item">
+            <li className="nav-item">
                 <Link className="nav-link" to={"/users"}>Messages</Link>
               </li>
-              <li> className="nav-item">
+              <li> 
                 <Link className="nav-link" to={"/events"}>Events</Link>
               </li>
             </ul>

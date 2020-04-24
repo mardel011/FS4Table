@@ -34,8 +34,8 @@ export default class Events extends Component {
                         <thead className="thead-dark">
                             <tr>
                                 <td>ID</td>
-                                <td>eventType</td>
-                                <td>username</td>
+                                <td>Event Type</td>
+                                <td>Username</td>
                                 <td>Date</td>
                             </tr>
                         </thead>
