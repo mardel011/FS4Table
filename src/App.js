@@ -3,6 +3,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import Users from "./components/users.component";
+import Events from "./components/events.component";
 
 function App() {
   return (<Router>
@@ -16,6 +17,9 @@ function App() {
               <li className="nav-item">
                 <Link className="nav-link" to={"/users"}>Messages</Link>
               </li>
+              <li> className="nav-item">
+                <Link className="nav-link" to={"/events"}>Events</Link>
+              </li>
             </ul>
           </div>
         </nav>
@@ -26,6 +30,7 @@ function App() {
           <div className="col-md-12">
             <Switch>
               <Route path="/users" component={Users} />
+              <Route path="/events" component={Events} />
             </Switch>
           </div>
         </div>

@@ -12,20 +12,3 @@ const chatHistorySchema = new mongoose.Schema({
 
 const chatHistory = mongoose.model('ChatHistory', chatHistorySchema, 'ChatHistory');
 module.exports = chatHistory
-
-
-/*const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-
-let userSchema = new Schema({
-    name: {
-        type: String
-    },
-    email: {
-        type: String
-    }
-}, {
-        collection: 'users'
-    })
-
-module.exports = mongoose.model('User', userSchema)*/

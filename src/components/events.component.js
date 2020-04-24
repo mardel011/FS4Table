@@ -1,27 +1,28 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import DataTable from './data-table';
+import DataTableEvents from './event-table';
 
-export default class Users extends Component {
+//changed 'Users' to 'Events' below
+export default class Events extends Component { 
 
     constructor(props) {
         super(props);
-        this.state = { messages: [] };
+        this.state = { events: [] };
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/messages') //changed '4000/users' to '.../messages'
+        axios.get('http://localhost:4000/events')
             .then(res => {
-                this.setState({ messages: res.data });
+                this.setState({ events: res.data });
             })
             .catch(function (error) {
                 console.log(error);
             })
     }
 
-    dataTable() {
-        return this.state.messages.map((data, i) => {
-            return <DataTable obj={data} key={i} />;
+    dataTableEvents() {
+        return this.state.events.map((data, i) => {
+            return <DataTableEvents obj={data} key={i} />;
         });
     }
 
@@ -33,13 +34,13 @@ export default class Users extends Component {
                         <thead className="thead-dark">
                             <tr>
                                 <td>ID</td>
-                                <td>Username</td>
-                                <td>Message</td>
+                                <td>eventType</td>
+                                <td>username</td>
                                 <td>Date</td>
                             </tr>
                         </thead>
                         <tbody>
-                            {this.dataTable()}
+                            {this.dataTableEvents()}
                         </tbody>
                     </table>
                 </div>

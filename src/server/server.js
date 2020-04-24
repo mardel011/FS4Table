@@ -6,6 +6,7 @@ let database = require('./database/db');
 
 
 const userRoute = require('../server/routes/user.routes')
+const eventRoute = require('../server/routes/event.routes')
 
 
 const connectionString = 'mongodb://shafinr:Pj8cAO8d9DJJQ8io@cluster0-shard-00-00-xljxs.mongodb.net:27017,cluster0-shard-00-01-xljxs.mongodb.net:27017,cluster0-shard-00-02-xljxs.mongodb.net:27017/ChatApp?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority';
@@ -34,6 +35,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(cors());
 app.use('/messages', userRoute) //changed 'users' to 'messages'
+app.use('/events', eventRoute)
 
 
 const port = process.env.PORT || 4000;
